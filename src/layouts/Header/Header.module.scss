@@ -1,0 +1,14 @@
+.wrapper {
+    height: 100px;
+    padding: 0 48px;
+    width: 100vw;
+    position: absolute;
+    z-index: 1;
+    display: flex;
+    justify-content: space-between;
+    z-index: 10;
+
+    .logo {
+        height: 100%;
+    }
+}

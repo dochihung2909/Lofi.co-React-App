@@ -1,0 +1,11 @@
+.wrapper {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.controller {
+    display: flex;
+    background-color: var(--P-background-color);
+    border-radius: 8px;
+}

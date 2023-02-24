@@ -1,0 +1,107 @@
+$button-size: 33px;
+
+.wrapper {
+    width: $button-size;
+    height: $button-size;
+    border-radius: 8px;
+
+    &.btn-border {
+        border: 1px solid var(--white);
+    }
+
+    .icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        & svg {
+            width: inherit;
+            height: inherit;
+        }
+    }
+}
+
+// Switch Button
+.switch-btn {
+    position: relative;
+    min-width: 45px;
+    transform: scale(1.4);
+    height: 22px;
+    overflow: hidden;
+    margin: 0 8px;
+}
+
+.switch-handle {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #f3a952;
+    border-radius: 100px;
+    border: 0;
+    cursor: pointer;
+    position: absolute;
+
+    &:hover {
+        opacity: 0.5;
+        z-index: 2;
+    }
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 2px;
+        width: 18px;
+        height: 18px;
+        inset-inline-end: 2px;
+        background-color: #fff;
+        box-shadow: 0 2px 4px 0 rgba(0, 35, 11, 0.2);
+        transition: all 0.2s;
+        border-radius: 100px;
+    }
+}
+
+#toggle {
+    display: none;
+
+    &:checked ~ .switch-handle {
+        background-color: rgba(0, 0, 0, 0.25);
+    }
+
+    &:active ~ .switch-handle::before {
+        width: 25px;
+    }
+
+    &:checked:active ~ .switch-handle::before {
+        width: 25px;
+        inset-inline-end: calc(100% - 27px);
+    }
+
+    &:checked ~ .switch-handle::before {
+        inset-inline-end: calc(100% - 20px);
+    }
+
+    &:checked ~ .switch-icon {
+        transform: translate(-20px, -50%);
+    }
+}
+
+.switch-icon {
+    position: absolute;
+    width: 54px;
+    display: flex;
+    justify-content: space-between;
+    left: 6px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    transition: all 0.2s;
+
+    & span {
+        display: flex;
+    }
+
+    & img {
+        width: 12px;
+    }
+}
