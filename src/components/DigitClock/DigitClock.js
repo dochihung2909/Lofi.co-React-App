@@ -38,6 +38,8 @@ function DigitClock() {
             updateTime()
         }, 60000)
 
+        updateTime()
+
         return () => {
             clearInterval(autoUpdateTimeInterval)
         }

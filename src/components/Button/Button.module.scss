@@ -1,9 +1,16 @@
 $button-size: 33px;
 
+a.wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .wrapper {
     width: $button-size;
     height: $button-size;
     border-radius: 8px;
+    overflow: hidden;
 
     &.btn-border {
         border: 1px solid var(--white);
@@ -36,7 +43,7 @@ $button-size: 33px;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: #f3a952;
+    background-color: var(--primary-color);
     border-radius: 100px;
     border: 0;
     cursor: pointer;
@@ -103,5 +110,17 @@ $button-size: 33px;
 
     & img {
         width: 12px;
+    }
+}
+
+.tool-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 42px;
+    height: 54px;
+
+    &:hover path {
+        stroke: white;
     }
 }

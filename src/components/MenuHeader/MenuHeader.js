@@ -1,9 +1,10 @@
 import classNames from 'classnames/bind'
-import { useContext } from 'react'
+import { useContext, useEffect, useRef, useState } from 'react'
 
 import DigitClock from '~/components/DigitClock'
 import styles from './MenuHeader.module.scss'
 import Toggle from '~/components/Button/Toggle'
+import Range from '~/components/Range'
 import {
     DayIcon,
     NightIcon,
@@ -17,13 +18,14 @@ import {
     MenuIcon,
 } from '~/components/Icons'
 import Button from '~/components/Button'
-import { PlayVideoContext, ThemeContext } from '~/context'
+import { PlayVideoContext, ThemeContext, AudioContext } from '~/context'
 
 const cx = classNames.bind(styles)
 
 function MenuHeader() {
     const { isPlayed, togglePlay } = useContext(PlayVideoContext)
     const { toggleTheme } = useContext(ThemeContext)
+    const { audioPlaying, setNextAudio, setPrevAudio } = useContext(AudioContext)
 
     function toggleFullScreen(elem) {
         // ## The below if statement seems to work better ## if ((document.fullScreenElement && document.fullScreenElement !== null) || (document.msfullscreenElement && document.msfullscreenElement !== null) || (!document.mozFullScreen && !document.webkitIsFullScreen)) {
@@ -59,22 +61,106 @@ function MenuHeader() {
         toggleFullScreen(document.body)
     }
 
-    console.log(isPlayed)
+    // Handle music
+    const audioRef = useRef(null)
+    const [muted, setMuted] = useState(false)
+    const [volumeAudio, setVolumeAudio] = useState(0.5)
+    const [showVolume, setShowVolume] = useState(false)
+    const [audioNow, setAudioNow] = useState({
+        now: audioPlaying.music[0],
+        prev: '',
+    })
+
+    useEffect(() => {
+        audioRef.current.volume = volumeAudio
+    }, [volumeAudio])
+
+    // Playmusic when click
+    const handlePlayMusic = () => {
+        togglePlay()
+        const audioElement = audioRef.current
+        !isPlayed ? audioElement.play() : audioElement.pause()
+        audioElement.volume = volumeAudio
+    }
+
+    // Mute when click muted btn
+    const handleMuted = () => {
+        const isMuted = !muted
+        if (isMuted) {
+            setVolumeAudio(0)
+        } else {
+            setVolumeAudio(0.5)
+        }
+        setMuted(isMuted)
+    }
+
+    // Change volume value when drag range input
+    const handleChangeVolume = (value) => {
+        value = value / 100
+        setVolumeAudio(value)
+    }
+
+    // Show volume when click
+    const handleShowVolumeControl = () => {
+        setShowVolume(!showVolume)
+    }
+
+    // Change audio when click next
+    const handleNext = () => {
+        const randNum = Math.floor(Math.random() * (audioPlaying.music.length - 1))
+        setAudioNow({
+            ...audioNow,
+            prev: audioNow.now,
+            now: audioPlaying.music[randNum],
+        })
+        setNextAudio()
+    }
+
+    // Change audio when click prev
+    const handlePrev = () => {
+        setAudioNow({
+            ...audioNow,
+            now: audioNow.prev,
+        })
+        setPrevAudio()
+    }
+
+    useEffect(() => {
+        const audioElement = audioRef.current
+        audioElement.src = audioNow.now
+        if (audioElement.hasAttribute('autoplay')) {
+            audioElement.removeAttribute('autoplay')
+        }
+        if (isPlayed) {
+            audioElement.setAttribute('autoplay', true)
+        }
+        console.log(audioElement.src, isPlayed)
+    }, [audioNow])
 
     return (
-        <div className={cx('wrapper')}>
-            <DigitClock />
-            <Toggle onClick={toggleTheme} leftIcon={<DayIcon></DayIcon>} rightIcon={<NightIcon></NightIcon>}></Toggle>
-            <div className={cx('controller')}>
-                <Button icon={<PrevIcon />}></Button>
-                <Button onClick={togglePlay} icon={!isPlayed ? <PlayIcon /> : <PauseIcon />}></Button>
-                <Button icon={<NextIcon />}></Button>
-                <Button icon={<VolumeIcon />}></Button>
+        <>
+            <div className={cx('wrapper')}>
+                <DigitClock />
+                <Toggle
+                    onClick={toggleTheme}
+                    leftIcon={<DayIcon></DayIcon>}
+                    rightIcon={<NightIcon></NightIcon>}
+                ></Toggle>
+                <div className={cx('controller', { showVolume: showVolume })}>
+                    <Button onClick={handlePrev} icon={<PrevIcon />}></Button>
+                    <Button onClick={handlePlayMusic} icon={!isPlayed ? <PlayIcon /> : <PauseIcon />}></Button>
+                    <Button onClick={handleNext} icon={<NextIcon />}></Button>
+                    <Button onClick={handleShowVolumeControl} icon={<VolumeIcon />}></Button>
+                    <Range show={showVolume} onChange={handleChangeVolume} value={volumeAudio * 100}></Range>
+                </div>
+                <Button onClick={handleMuted} className={cx({ muted: muted })} icon={<VolumeMutedIcon />}></Button>
+                <Button onClick={handleFullScreen} icon={<FullScreenIcon />}></Button>
+                <Button icon={<MenuIcon />}></Button>
             </div>
-            <Button border icon={<VolumeMutedIcon />}></Button>
-            <Button onClick={handleFullScreen} border icon={<FullScreenIcon />}></Button>
-            <Button border icon={<MenuIcon />}></Button>
-        </div>
+            <audio onEnded={handleNext} src={audioNow.now} ref={audioRef} preload="auto">
+                <source src={audioNow.now} type="audio/mpeg"></source>
+            </audio>
+        </>
     )
 }
 

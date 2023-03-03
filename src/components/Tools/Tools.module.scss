@@ -1,0 +1,15 @@
+$total-btn: 3;
+$height-wrapper: ($total-btn * 52px);
+
+.wrapper {
+    transition: all 0.2s;
+    height: 0;
+}
+
+.show {
+    height: $height-wrapper;
+}
+
+.sub-tool-btn {
+    height: 52px;
+}

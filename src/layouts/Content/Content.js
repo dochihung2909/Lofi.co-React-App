@@ -4,6 +4,7 @@ import styles from './Content.module.scss'
 import videos from '~/assets/videos'
 import { useContext } from 'react'
 import { ThemeContext } from '~/context'
+import Playlist from '~/components/Playlist'
 
 const cx = classNames.bind(styles)
 

@@ -2,10 +2,20 @@
     display: flex;
     align-items: center;
     gap: 16px;
+
+    .muted {
+        border: 2px solid rgb(243, 169, 82);
+    }
 }
 
 .controller {
     display: flex;
     background-color: var(--P-background-color);
     border-radius: 8px;
+    padding: 0 4px;
+    position: relative;
+
+    &.showVolume {
+        border-radius: 8px 8px 0 0;
+    }
 }

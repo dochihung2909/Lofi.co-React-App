@@ -10,6 +10,7 @@
 :root {
     --white: #fff;
     --P-background-color: rgb(18 18 18 / 75%);
+    --primary-color: #f3a952;
 }
 
 html {
@@ -23,6 +24,7 @@ body {
     line-height: 1.2;
     text-rendering: optimizeSpeed;
     overflow-y: overlay;
+    background-color: #000;
 }
 
 .wrapper {

@@ -1,0 +1,19 @@
+.wrapper {
+    position: absolute;
+    bottom: 39px;
+    left: 80px;
+    height: 58px;
+    color: white;
+    width: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    color: rgba($color: #ffffff, $alpha: 0.5);
+}
+
+.artist-thumb {
+    height: 70px;
+    width: auto;
+    margin: 0 16px;
+}

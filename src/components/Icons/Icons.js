@@ -30,7 +30,7 @@ const DayIcon = ({ className, width = '1.4rem', height = '1.4rem' }) => (
     </svg>
 )
 
-const FullScreenIcon = ({ className, width = '3.5rem', height = '3.5rem' }) => (
+const FullScreenIcon = ({ className, width = '3.2rem', height = '3.2rem' }) => (
     <svg
         className={className}
         width={width}
@@ -47,7 +47,7 @@ const FullScreenIcon = ({ className, width = '3.5rem', height = '3.5rem' }) => (
     </svg>
 )
 
-const MenuIcon = ({ className, width = '3.5rem', height = '3.5rem' }) => (
+const MenuIcon = ({ className, width = '3.2rem', height = '3.2rem' }) => (
     <svg
         className={className}
         width={width}
@@ -152,7 +152,7 @@ const VolumeIcon = ({ className, width = '1.8rem', height = '1.5rem' }) => (
     </svg>
 )
 
-const VolumeMutedIcon = ({ className, width = '3.5rem', height = '3.5rem' }) => (
+const VolumeMutedIcon = ({ className, width = '3.2rem', height = '3.2rem' }) => (
     <svg
         className={className}
         width={width}
@@ -176,6 +176,250 @@ const VolumeMutedIcon = ({ className, width = '3.5rem', height = '3.5rem' }) => 
     </svg>
 )
 
+const MixerToolIcon = ({ className, width = '2rem', height = '2rem' }) => (
+    <>
+        <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className={className}
+            width={width}
+            height={height}
+            viewBox="0 0 20 20"
+            fill="none"
+        >
+            <path
+                d="M4.1665 17.5L4.1665 12.5M4.1665 5.83333V2.5M9.99984 17.5L9.99984 12.5M9.99984 5.83333V2.5M15.8332 17.5V14.1667M15.8332 7.5V2.5"
+                stroke="gray"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+            />
+            <path
+                d="M10 9.16671C10.9205 9.16671 11.6667 8.42052 11.6667 7.50004C11.6667 6.57957 10.9205 5.83337 10 5.83337C9.07953 5.83337 8.33333 6.57957 8.33333 7.50004C8.33333 8.42052 9.07953 9.16671 10 9.16671Z"
+                stroke="white"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+            />
+            <path
+                d="M15.8333 14.1667C16.7538 14.1667 17.5 13.4205 17.5 12.5C17.5 11.5796 16.7538 10.8334 15.8333 10.8334C14.9129 10.8334 14.1667 11.5796 14.1667 12.5C14.1667 13.4205 14.9129 14.1667 15.8333 14.1667Z"
+                stroke="white"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+            />
+            <path
+                d="M4.16667 12.5C5.08714 12.5 5.83333 11.7538 5.83333 10.8334C5.83333 9.9129 5.08714 9.16671 4.16667 9.16671C3.24619 9.16671 2.5 9.9129 2.5 10.8334C2.5 11.7538 3.24619 12.5 4.16667 12.5Z"
+                stroke="white"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+            />
+        </svg>
+    </>
+)
+
+const WidgetsToolIcon = ({ className, width = '2.0rem', height = '2.0rem' }) => (
+    <svg
+        xmlns="http://www.w3.org/2000/svg"
+        className={className}
+        width={width}
+        height={height}
+        viewBox="0 0 20 20"
+        fill="none"
+    >
+        <path
+            d="M7 2.5H3.83333C3.36662 2.5 3.13327 2.5 2.95501 2.59083C2.79821 2.67072 2.67072 2.79821 2.59083 2.95501C2.5 3.13327 2.5 3.36662 2.5 3.83333V7C2.5 7.46671 2.5 7.70007 2.59083 7.87833C2.67072 8.03513 2.79821 8.16261 2.95501 8.24251C3.13327 8.33333 3.36662 8.33333 3.83333 8.33333H7C7.46671 8.33333 7.70007 8.33333 7.87833 8.24251C8.03513 8.16261 8.16261 8.03513 8.24251 7.87833C8.33333 7.70007 8.33333 7.46671 8.33333 7V3.83333C8.33333 3.36662 8.33333 3.13327 8.24251 2.95501C8.16261 2.79821 8.03513 2.67072 7.87833 2.59083C7.70007 2.5 7.46671 2.5 7 2.5Z"
+            stroke="white"
+            strokeWidth="1.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+        />
+        <path
+            d="M16.1667 2.5H13C12.5333 2.5 12.2999 2.5 12.1217 2.59083C11.9649 2.67072 11.8374 2.79821 11.7575 2.95501C11.6667 3.13327 11.6667 3.36662 11.6667 3.83333V7C11.6667 7.46671 11.6667 7.70007 11.7575 7.87833C11.8374 8.03513 11.9649 8.16261 12.1217 8.24251C12.2999 8.33333 12.5333 8.33333 13 8.33333H16.1667C16.6334 8.33333 16.8667 8.33333 17.045 8.24251C17.2018 8.16261 17.3293 8.03513 17.4092 7.87833C17.5 7.70007 17.5 7.46671 17.5 7V3.83333C17.5 3.36662 17.5 3.13327 17.4092 2.95501C17.3293 2.79821 17.2018 2.67072 17.045 2.59083C16.8667 2.5 16.6334 2.5 16.1667 2.5Z"
+            stroke="white"
+            strokeWidth="1.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+        />
+        <path
+            d="M16.1667 11.6667H13C12.5333 11.6667 12.2999 11.6667 12.1217 11.7575C11.9649 11.8374 11.8374 11.9649 11.7575 12.1217C11.6667 12.2999 11.6667 12.5333 11.6667 13V16.1667C11.6667 16.6334 11.6667 16.8667 11.7575 17.045C11.8374 17.2018 11.9649 17.3293 12.1217 17.4092C12.2999 17.5 12.5333 17.5 13 17.5H16.1667C16.6334 17.5 16.8667 17.5 17.045 17.4092C17.2018 17.3293 17.3293 17.2018 17.4092 17.045C17.5 16.8667 17.5 16.6334 17.5 16.1667V13C17.5 12.5333 17.5 12.2999 17.4092 12.1217C17.3293 11.9649 17.2018 11.8374 17.045 11.7575C16.8667 11.6667 16.6334 11.6667 16.1667 11.6667Z"
+            stroke="gray"
+            strokeWidth="1.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+        />
+        <path
+            d="M7 11.6667H3.83333C3.36662 11.6667 3.13327 11.6667 2.95501 11.7575C2.79821 11.8374 2.67072 11.9649 2.59083 12.1217C2.5 12.2999 2.5 12.5333 2.5 13V16.1667C2.5 16.6334 2.5 16.8667 2.59083 17.045C2.67072 17.2018 2.79821 17.3293 2.95501 17.4092C3.13327 17.5 3.36662 17.5 3.83333 17.5H7C7.46671 17.5 7.70007 17.5 7.87833 17.4092C8.03513 17.3293 8.16261 17.2018 8.24251 17.045C8.33333 16.8667 8.33333 16.6334 8.33333 16.1667V13C8.33333 12.5333 8.33333 12.2999 8.24251 12.1217C8.16261 11.9649 8.03513 11.8374 7.87833 11.7575C7.70007 11.6667 7.46671 11.6667 7 11.6667Z"
+            stroke="white"
+            strokeWidth="1.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+        />
+    </svg>
+)
+
+const ScencesToolIcon = ({ className, width = '2.0rem', height = '2.0rem' }) => (
+    <>
+        <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className={className}
+            width={width}
+            height={height}
+            viewBox="0 0 20 20"
+            fill="none"
+        >
+            <g clipPath="url(#clip0_356_347)">
+                <path
+                    d="M4.99949 16.667L12.3904 9.2761C12.7204 8.94609 12.8854 8.78108 13.0757 8.71926C13.243 8.66487 13.4233 8.66487 13.5907 8.71926C13.781 8.78108 13.946 8.94609 14.276 9.2761L17.8375 12.8377M8.74984 7.08329C8.74984 8.00377 8.00365 8.74996 7.08317 8.74996C6.1627 8.74996 5.4165 8.00377 5.4165 7.08329C5.4165 6.16282 6.1627 5.41663 7.08317 5.41663C8.00365 5.41663 8.74984 6.16282 8.74984 7.08329ZM18.3332 9.99996C18.3332 14.6023 14.6022 18.3333 9.99984 18.3333C5.39746 18.3333 1.6665 14.6023 1.6665 9.99996C1.6665 5.39759 5.39746 1.66663 9.99984 1.66663C14.6022 1.66663 18.3332 5.39759 18.3332 9.99996Z"
+                    stroke="white"
+                    strokeWidth="1.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                />
+                <path
+                    d="M7.08317 8.74996C8.00365 8.74996 8.74984 8.00377 8.74984 7.08329C8.74984 6.16282 8.00365 5.41663 7.08317 5.41663C6.1627 5.41663 5.4165 6.16282 5.4165 7.08329C5.4165 8.00377 6.1627 8.74996 7.08317 8.74996Z"
+                    stroke="gray"
+                    strokeWidth="1.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                />
+            </g>
+            <defs>
+                <clipPath id="clip0_356_347">
+                    <rect width="20" height="20" fill="white" />
+                </clipPath>
+            </defs>
+        </svg>
+    </>
+)
+
+const TemplateToolIcon = ({ className, width = '2.0rem', height = '2.0rem' }) => (
+    <>
+        <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className={className}
+            width={width}
+            height={height}
+            viewBox="0 0 20 20"
+            fill="none"
+        >
+            <g clipPath="url(#clip0_356_118)">
+                <path
+                    d="M10 17.0601C10.8846 17.8519 12.0527 18.3333 13.3333 18.3333C16.0948 18.3333 18.3333 16.0947 18.3333 13.3333C18.3333 11.0275 16.7726 9.08627 14.6499 8.50842"
+                    stroke="gray"
+                    strokeWidth="1.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                />
+                <path
+                    d="M5.34999 8.50843C3.22728 9.08627 1.6665 11.0275 1.6665 13.3333C1.6665 16.0947 3.90508 18.3333 6.6665 18.3333C9.42793 18.3333 11.6665 16.0947 11.6665 13.3333C11.6665 12.6829 11.5423 12.0615 11.3164 11.4915M14.9998 6.66663C14.9998 9.42805 12.7613 11.6666 9.99984 11.6666C7.23841 11.6666 4.99984 9.42805 4.99984 6.66663C4.99984 3.9052 7.23841 1.66663 9.99984 1.66663C12.7613 1.66663 14.9998 3.9052 14.9998 6.66663Z"
+                    stroke="white"
+                    strokeWidth="1.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                />
+            </g>
+            <defs>
+                <clipPath id="clip0_356_118">
+                    <rect width="20" height="20" fill="white" />
+                </clipPath>
+            </defs>
+        </svg>
+    </>
+)
+
+const MenuYoutubeToolIcon = ({ className, width = '2.0rem', height = '2.0rem' }) => (
+    <svg
+        xmlns="http://www.w3.org/2000/svg"
+        className={className}
+        width={width}
+        height={height}
+        viewBox="0 0 20 20"
+        fill="none"
+    >
+        <g clipPath="url(#clip0_356_129)">
+            <path
+                d="M9.99984 18.3333C14.6022 18.3333 18.3332 14.6023 18.3332 9.99996C18.3332 5.39759 14.6022 1.66663 9.99984 1.66663C5.39746 1.66663 1.6665 5.39759 1.6665 9.99996C1.6665 14.6023 5.39746 18.3333 9.99984 18.3333Z"
+                stroke="gray"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+            />
+            <path
+                d="M7.9165 7.47107C7.9165 7.07334 7.9165 6.87447 7.99962 6.76344C8.07206 6.66669 8.18293 6.60616 8.30349 6.59755C8.44182 6.58767 8.60911 6.69521 8.94368 6.91029L12.8775 9.43918C13.1678 9.62581 13.313 9.71913 13.3631 9.83779C13.4069 9.94147 13.4069 10.0585 13.3631 10.1621C13.313 10.2808 13.1678 10.3741 12.8775 10.5607L8.94368 13.0896C8.60911 13.3047 8.44182 13.4123 8.30349 13.4024C8.18293 13.3938 8.07206 13.3332 7.99962 13.2365C7.9165 13.1255 7.9165 12.9266 7.9165 12.5289V7.47107Z"
+                stroke="white"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+            />
+        </g>
+        <defs>
+            <clipPath id="clip0_356_129">
+                <rect width="20" height="20" fill="white" />
+            </clipPath>
+        </defs>
+    </svg>
+)
+
+const MenuTimerToolIcon = ({ className, width = '2.0rem', height = '2.0rem' }) => (
+    <svg
+        xmlns="http://www.w3.org/2000/svg"
+        className={className}
+        width={width}
+        height={height}
+        viewBox="0 0 20 20"
+        fill="none"
+    >
+        <g clipPath="url(#clip0_356_132)">
+            <path
+                d="M12.0835 15.8333L13.7502 17.5L17.5002 13.75"
+                stroke="gray"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+            />
+            <path
+                d="M18.3208 10.4582C18.329 10.3065 18.3332 10.1537 18.3332 9.99996C18.3332 5.39759 14.6022 1.66663 9.99984 1.66663C5.39746 1.66663 1.6665 5.39759 1.6665 9.99996C1.6665 14.5295 5.28026 18.2149 9.78191 18.3305M9.99984 4.99996V9.99996L13.1151 11.5576"
+                stroke="white"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+            />
+        </g>
+        <defs>
+            <clipPath id="clip0_356_132">
+                <rect width="20" height="20" fill="white" />
+            </clipPath>
+        </defs>
+    </svg>
+)
+
+const MenuNotesToolIcon = ({ className, width = '2.0rem', height = '2.0rem' }) => (
+    <svg
+        xmlns="http://www.w3.org/2000/svg"
+        className={className}
+        width={width}
+        height={height}
+        viewBox="0 0 20 20"
+        fill="none"
+    >
+        <path
+            d="M18.3333 5.16667C18.3333 4.23325 18.3333 3.76654 18.1517 3.41002C17.9919 3.09641 17.7369 2.84144 17.4233 2.68166C17.0668 2.5 16.6001 2.5 15.6667 2.5H15.3333C13.4665 2.5 12.5331 2.5 11.82 2.86331C11.1928 3.18289 10.6829 3.69282 10.3633 4.32003C10 5.03307 10 5.96649 10 7.83333V17.5L10.0834 17.3749C10.6622 16.5066 10.9517 16.0725 11.3341 15.7582C11.6726 15.4799 12.0627 15.2712 12.482 15.1438C12.9556 15 13.4774 15 14.521 15H15.6667C16.6001 15 17.0668 15 17.4233 14.8183C17.7369 14.6586 17.9919 14.4036 18.1517 14.09C18.3333 13.7335 18.3333 13.2668 18.3333 12.3333V5.16667Z"
+            stroke="gray"
+            strokeWidth="1.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+        />
+        <path
+            d="M1.6665 5.16667C1.6665 4.23325 1.6665 3.76654 1.84816 3.41002C2.00795 3.09641 2.26292 2.84144 2.57652 2.68166C2.93304 2.5 3.39975 2.5 4.33317 2.5H4.6665C6.53335 2.5 7.46677 2.5 8.17981 2.86331C8.80701 3.18289 9.31695 3.69282 9.63653 4.32003C9.99984 5.03307 9.99984 5.96649 9.99984 7.83333V17.5L9.91646 17.3749C9.33759 16.5066 9.04816 16.0725 8.66575 15.7582C8.32722 15.4799 7.93714 15.2712 7.51784 15.1438C7.04421 15 6.52243 15 5.47886 15H4.33317C3.39975 15 2.93304 15 2.57652 14.8183C2.26292 14.6586 2.00795 14.4036 1.84816 14.09C1.6665 13.7335 1.6665 13.2668 1.6665 12.3333V5.16667Z"
+            stroke="white"
+            strokeWidth="1.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+        />
+    </svg>
+)
+
 export {
     NightIcon,
     DayIcon,
@@ -187,4 +431,11 @@ export {
     PlayIcon,
     VolumeIcon,
     VolumeMutedIcon,
+    WidgetsToolIcon,
+    ScencesToolIcon,
+    TemplateToolIcon,
+    MixerToolIcon,
+    MenuYoutubeToolIcon,
+    MenuTimerToolIcon,
+    MenuNotesToolIcon,
 }
