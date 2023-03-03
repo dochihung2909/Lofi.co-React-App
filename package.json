@@ -23,6 +23,8 @@
         "sass": "^1.58.3"
     },
     "scripts": {
+        "predeploy": "npm run build",
+        "deploy": "gh-pages -d build",
         "start": "react-app-rewired start",
         "build": "react-app-rewired build",
         "test": "react-app-rewired test",
@@ -45,5 +47,6 @@
             "last 1 firefox version",
             "last 1 safari version"
         ]
-    }
+    },
+    "homepage": "https://dochihung2909.github.io/Lofi.co-React-App"
 }
