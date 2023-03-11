@@ -1,5 +1,5 @@
 import classNames from 'classnames/bind'
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 
 import Header from '~/layouts/Header'
 import Content from '~/layouts/Content'

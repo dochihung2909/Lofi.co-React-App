@@ -10,6 +10,7 @@
 
 .controller {
     display: flex;
+    backdrop-filter: blur(30px);
     background-color: var(--P-background-color);
     border-radius: 8px;
     padding: 0 4px;

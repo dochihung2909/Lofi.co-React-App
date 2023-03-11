@@ -1,0 +1,16 @@
+.wrapper {
+    overflow: hidden;
+    background: var(--P-background-color);
+    backdrop-filter: blur(30px);
+
+    .title {
+        font-size: 1.8rem;
+        color: var(--white);
+        font-weight: 500;
+        margin: 8px 0;
+    }
+
+    &.border {
+        border: 1px solid var(--P-border-color);
+    }
+}

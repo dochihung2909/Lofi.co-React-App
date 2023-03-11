@@ -4,10 +4,32 @@
     top: 50%;
     transform: translateY(-50%);
     background-color: var(--P-background-color);
+    backdrop-filter: blur(30px);
     display: flex;
     flex-direction: column;
     padding: 14px 0;
     border-radius: 10px;
     border: 1px solid rgb(255 255 255 / 10%);
-    overflow: hidden;
+
+    .icon-wrapper {
+        overflow: hidden;
+    }
+}
+
+.scene-modal {
+    position: absolute;
+    right: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 16px;
+
+    .scene-container {
+        height: 600px;
+        overflow-y: overlay;
+
+        /* width */
+        &::-webkit-scrollbar {
+            width: 0px;
+        }
+    }
 }

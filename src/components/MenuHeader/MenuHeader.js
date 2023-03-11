@@ -64,32 +64,42 @@ function MenuHeader() {
     // Handle music
     const audioRef = useRef(null)
     const [muted, setMuted] = useState(false)
-    const [volumeAudio, setVolumeAudio] = useState(0.5)
+    const [volumeAudio, setVolumeAudio] = useState({
+        current: 0.5,
+        prev: 0.5,
+    })
     const [showVolume, setShowVolume] = useState(false)
     const [audioNow, setAudioNow] = useState({
         now: audioPlaying.music[0],
-        prev: '',
+        prev: [],
     })
 
     useEffect(() => {
-        audioRef.current.volume = volumeAudio
+        audioRef.current.volume = volumeAudio.current
     }, [volumeAudio])
 
-    // Playmusic when click
+    // Play music when click
     const handlePlayMusic = () => {
         togglePlay()
         const audioElement = audioRef.current
         !isPlayed ? audioElement.play() : audioElement.pause()
-        audioElement.volume = volumeAudio
+        audioElement.volume = volumeAudio.current
     }
 
     // Mute when click muted btn
     const handleMuted = () => {
         const isMuted = !muted
         if (isMuted) {
-            setVolumeAudio(0)
+            setVolumeAudio({
+                ...volumeAudio,
+                prev: volumeAudio.current,
+                current: 0,
+            })
         } else {
-            setVolumeAudio(0.5)
+            setVolumeAudio({
+                ...volumeAudio,
+                current: volumeAudio.prev,
+            })
         }
         setMuted(isMuted)
     }
@@ -97,7 +107,10 @@ function MenuHeader() {
     // Change volume value when drag range input
     const handleChangeVolume = (value) => {
         value = value / 100
-        setVolumeAudio(value)
+        setVolumeAudio({
+            ...volumeAudio,
+            current: value,
+        })
     }
 
     // Show volume when click
@@ -105,12 +118,17 @@ function MenuHeader() {
         setShowVolume(!showVolume)
     }
 
+    // Handle onblur event hide volume control
+    const handleOnBlurVolumeControl = () => {
+        setTimeout(handleShowVolumeControl, 3000)
+    }
+
     // Change audio when click next
     const handleNext = () => {
         const randNum = Math.floor(Math.random() * (audioPlaying.music.length - 1))
         setAudioNow({
             ...audioNow,
-            prev: audioNow.now,
+            prev: [...audioNow.prev, audioNow.now],
             now: audioPlaying.music[randNum],
         })
         setNextAudio()
@@ -118,9 +136,15 @@ function MenuHeader() {
 
     // Change audio when click prev
     const handlePrev = () => {
+        if (audioNow.prev.length === 0) {
+            handleNext()
+            return
+        }
+
         setAudioNow({
             ...audioNow,
-            now: audioNow.prev,
+            now: audioNow.prev[audioNow.prev.length - 1],
+            prev: audioNow.prev.slice(0, audioNow.prev.length - 1),
         })
         setPrevAudio()
     }
@@ -134,8 +158,9 @@ function MenuHeader() {
         if (isPlayed) {
             audioElement.setAttribute('autoplay', true)
         }
-        console.log(audioElement.src, isPlayed)
-    }, [audioNow])
+
+        console.log(audioNow)
+    }, [audioNow, isPlayed])
 
     return (
         <>
@@ -151,7 +176,12 @@ function MenuHeader() {
                     <Button onClick={handlePlayMusic} icon={!isPlayed ? <PlayIcon /> : <PauseIcon />}></Button>
                     <Button onClick={handleNext} icon={<NextIcon />}></Button>
                     <Button onClick={handleShowVolumeControl} icon={<VolumeIcon />}></Button>
-                    <Range show={showVolume} onChange={handleChangeVolume} value={volumeAudio * 100}></Range>
+                    <Range
+                        onBlur={handleOnBlurVolumeControl}
+                        show={showVolume}
+                        onChange={handleChangeVolume}
+                        value={volumeAudio.current * 100}
+                    ></Range>
                 </div>
                 <Button onClick={handleMuted} className={cx({ muted: muted })} icon={<VolumeMutedIcon />}></Button>
                 <Button onClick={handleFullScreen} icon={<FullScreenIcon />}></Button>
