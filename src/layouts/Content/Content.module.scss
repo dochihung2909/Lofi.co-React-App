@@ -8,7 +8,8 @@
     align-items: center;
     justify-content: center;
 
-    .background-video {
+    .background-video,
+    .default-background {
         display: flex;
         position: absolute;
         min-height: 100vh;

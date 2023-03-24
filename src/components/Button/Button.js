@@ -58,7 +58,7 @@ const Button = forwardRef(
 
         return (
             <Wrapper style={{ display: 'flex' }} {...tippyProps}>
-                <Comp className={classes} {...props}>
+                <Comp ref={ref} className={classes} {...props}>
                     <span className={cx('icon')}>{icon}</span>
                     {children}
                 </Comp>

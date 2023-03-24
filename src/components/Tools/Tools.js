@@ -5,10 +5,10 @@ import { MenuNotesToolIcon, MenuYoutubeToolIcon, MenuTimerToolIcon } from '~/com
 
 const cx = classNames.bind(styles)
 
-function Tools({ show }) {
+function Tools({ onShowYtURL, show }) {
     return (
         <div className={cx('wrapper', { show: show === true })}>
-            <Button toolBtn className={cx('sub-tool-btn')}>
+            <Button onClick={onShowYtURL} toolBtn className={cx('sub-tool-btn')}>
                 <MenuYoutubeToolIcon></MenuYoutubeToolIcon>
             </Button>
             <Button toolBtn className={cx('sub-tool-btn')}>

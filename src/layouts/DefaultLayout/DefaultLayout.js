@@ -7,6 +7,7 @@ import styles from './DefaultLayout.module.scss'
 import { ThemeContext, PlayVideoContext, AudioContext } from '~/context'
 import LateralMenu from '~/components/LateralMenu'
 import Bottom from '../Bottom'
+import videos from '~/assets/videos'
 import playList from '~/assets/musics'
 
 const cx = classNames.bind(styles)
@@ -16,11 +17,24 @@ function DefaultLayout() {
     const [isPlayed, setIsPlayed] = useState(false)
     const [audioPlaying, setAudioPlaying] = useState(playList[0])
     const [prevAudioPlaying, setPrevAudioPlaying] = useState()
+    const [bgTheme, setBgTheme] = useState({
+        day: videos.seoul.inside.day,
+        night: videos.seoul.inside.night,
+        dayRainy: '',
+        nightRainy: '',
+    })
 
     return (
         <ThemeContext.Provider
             value={{
                 theme,
+                bgTheme,
+                changeBgTheme(newBg) {
+                    setBgTheme((prev) => ({
+                        ...prev,
+                        ...newBg,
+                    }))
+                },
                 toggleTheme() {
                     setTheme((prev) => !prev)
                 },

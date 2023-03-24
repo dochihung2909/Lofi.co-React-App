@@ -1,8 +1,15 @@
 .wrapper {
-    padding: 8px 0;
+    display: flex;
+    margin: 8px 0;
     position: relative;
     cursor: pointer;
-    overflow: hidden;
+
+    & .scence-container {
+        position: relative;
+        cursor: pointer;
+        height: 100%;
+        overflow: hidden;
+    }
 
     & img {
         object-fit: cover;
@@ -10,6 +17,7 @@
         width: 100%;
         opacity: 0.6;
         border-radius: 16px;
+        display: flex;
 
         &.active {
             opacity: 1;
@@ -18,7 +26,7 @@
 
     .icon-scenes {
         position: absolute;
-        bottom: 20px;
+        bottom: 6px;
         left: 12px;
         color: var(--white);
         display: flex;

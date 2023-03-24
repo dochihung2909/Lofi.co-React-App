@@ -1,5 +1,5 @@
 const { createContext } = require('react')
 
-const ThemeContext = createContext('day')
+const ThemeContext = createContext()
 
 export default ThemeContext

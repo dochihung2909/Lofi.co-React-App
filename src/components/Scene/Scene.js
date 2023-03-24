@@ -10,19 +10,21 @@ function Scene({ onClick, sceneThumb, scenes, variations, active }) {
     return (
         <div onClick={onClick} className={cx('wrapper')}>
             <img className={cx({ active: active })} src={sceneThumb} alt="scene thumb" />
-            <Tippy
-                placement="bottom"
-                content={`${scenes} scenes ${variations} variations`}
-                arrow={false}
-                offset={[0, 6]}
-            >
-                <div className={cx('icon-scenes')}>
-                    <SceneIcon />
-                    {scenes}
-                    <VariationIcon />
-                    {variations}
-                </div>
-            </Tippy>
+            {scenes && variations && (
+                <Tippy
+                    placement="bottom"
+                    content={`${scenes} scenes ${variations} variations`}
+                    arrow={false}
+                    offset={[0, 6]}
+                >
+                    <div className={cx('icon-scenes')}>
+                        <SceneIcon />
+                        {scenes}
+                        <VariationIcon />
+                        {variations}
+                    </div>
+                </Tippy>
+            )}
         </div>
     )
 }
