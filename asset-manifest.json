@@ -1,11 +1,18 @@
 {
   "files": {
-    "main.css": "/Lofi.co-React-App/static/css/main.1cc7b0a4.css",
-    "main.js": "/Lofi.co-React-App/static/js/main.8ee10300.js",
+    "main.css": "/Lofi.co-React-App/static/css/main.2afbd844.css",
+    "main.js": "/Lofi.co-React-App/static/js/main.1f3a7158.js",
     "static/js/787.a0658cbe.chunk.js": "/Lofi.co-React-App/static/js/787.a0658cbe.chunk.js",
     "static/media/Exterior+-+Rainy+Day.mp4": "/Lofi.co-React-App/static/media/Exterior+-+Rainy+Day.cd2045149ad6a93f9ddc.mp4",
+    "static/media/slow-down-night.mp4": "/Lofi.co-React-App/static/media/slow-down-night.4b216a271aebf6dbe327.mp4",
+    "static/media/slow-down-day.mp4": "/Lofi.co-React-App/static/media/slow-down-day.384ded2e14b566a0a936.mp4",
+    "static/media/Exterior+-+Rainy+Night.mp4": "/Lofi.co-React-App/static/media/Exterior+-+Rainy+Night.686658eefaec18fac96b.mp4",
     "static/media/inside+-+night.mp4": "/Lofi.co-React-App/static/media/inside+-+night.d02ffb639a7bc8703116.mp4",
     "static/media/inside+-+day.mp4": "/Lofi.co-React-App/static/media/inside+-+day.95447c04e33ff5de6ad3.mp4",
+    "static/media/Interior+-+Rainy+Night.mp4": "/Lofi.co-React-App/static/media/Interior+-+Rainy+Night.7b06cb4713d38a24bfef.mp4",
+    "static/media/Interior+-+Rainy+Day.mp4": "/Lofi.co-React-App/static/media/Interior+-+Rainy+Day.a1a298f819bb633ac406.mp4",
+    "static/media/Interior+-+Night.mp4": "/Lofi.co-React-App/static/media/Interior+-+Night.e3cb0e34e12dedd1c012.mp4",
+    "static/media/Interior+-+Sunny+Day.mp4": "/Lofi.co-React-App/static/media/Interior+-+Sunny+Day.f962784083e3ab71572b.mp4",
     "static/media/Exterior+-+Day.mp4": "/Lofi.co-React-App/static/media/Exterior+-+Day.f3d2d770039a30a5212a.mp4",
     "static/media/Exterior+-+Night.mp4": "/Lofi.co-React-App/static/media/Exterior+-+Night.1befc195707d0afb99e4.mp4",
     "static/media/logo.gif": "/Lofi.co-React-App/static/media/logo.0cbf9e63b4a021661126.gif",
@@ -21,12 +28,12 @@
     "index.html": "/Lofi.co-React-App/index.html",
     "static/media/fullscreen.svg": "/Lofi.co-React-App/static/media/fullscreen.d2ed3a8a17718b26158cf125e9950a01.svg",
     "static/media/menu.svg": "/Lofi.co-React-App/static/media/menu.6668f7df20559b5a20acf28e4a9eac60.svg",
-    "main.1cc7b0a4.css.map": "/Lofi.co-React-App/static/css/main.1cc7b0a4.css.map",
-    "main.8ee10300.js.map": "/Lofi.co-React-App/static/js/main.8ee10300.js.map",
+    "main.2afbd844.css.map": "/Lofi.co-React-App/static/css/main.2afbd844.css.map",
+    "main.1f3a7158.js.map": "/Lofi.co-React-App/static/js/main.1f3a7158.js.map",
     "787.a0658cbe.chunk.js.map": "/Lofi.co-React-App/static/js/787.a0658cbe.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.1cc7b0a4.css",
-    "static/js/main.8ee10300.js"
+    "static/css/main.2afbd844.css",
+    "static/js/main.1f3a7158.js"
   ]
 }
