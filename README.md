@@ -10,7 +10,7 @@ In the project directory, you can run:
 
 ### `npm i`
 
-Runs this command to install nodemodules and start using this repository.
+Runs this command to install node_modules and start using this repository.
 
 ### `npm start`
 
