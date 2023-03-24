@@ -1,7 +1,7 @@
 # Getting Started with Lofi.co React App
 
-This project was created by HungTS. I cloned this website to share with my friend and practice ReactJS library to create SPA website.
-This is a website for who want to study with lofi music, it also supports with Spotify and Youtube music `(Coming soon 🔮🔮)`.
+Hello, my name is HungTS, and I created this website. I cloned it to share with my friends and to practice using the ReactJS library to create a SPA website. This website is designed for people who want to study when listening to lofi music. It also supports Spotify and Youtube music `(Coming soon 🔮🔮)`.
+ 
 Have a nice day 👌👌👌
 
 ## Available Scripts
