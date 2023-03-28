@@ -8,13 +8,20 @@ const cx = classNames.bind(styles)
 function Tools({ onShowYtURL, show }) {
     return (
         <div className={cx('wrapper', { show: show === true })}>
-            <Button onClick={onShowYtURL} toolBtn className={cx('sub-tool-btn')}>
+            <Button
+                onClick={onShowYtURL}
+                toolBtn
+                className={cx('sub-tool-btn')}
+                titleTippy="Youtube"
+                placement="left"
+                arrow={false}
+            >
                 <MenuYoutubeToolIcon></MenuYoutubeToolIcon>
             </Button>
-            <Button toolBtn className={cx('sub-tool-btn')}>
+            <Button toolBtn className={cx('sub-tool-btn')} titleTippy="Timer" placement="left" arrow={false}>
                 <MenuTimerToolIcon></MenuTimerToolIcon>
             </Button>
-            <Button toolBtn className={cx('sub-tool-btn')}>
+            <Button toolBtn className={cx('sub-tool-btn')} titleTippy="Notes" placement="left" arrow={false}>
                 <MenuNotesToolIcon></MenuNotesToolIcon>
             </Button>
         </div>

@@ -11,10 +11,10 @@ import Modal from '~/components/Modal'
 import Scene from '~/components/Scene'
 import videos from '~/assets/videos'
 import { ThemeContext } from '~/context'
+import Mixer from '../Mixer'
+import YTEmbed from '../YTEmbed'
 
 const cx = classNames.bind(styles)
-
-const regexYTLink = /http(?:s?):\/\/(?:www\.)?youtu(?:be\.com\/watch\?v=|\.be\/)([\w\-\_]*)(&(amp;)?‌​[\w\?‌​=]*)?/
 
 // fetch data scene
 const scenes = [
@@ -138,13 +138,11 @@ function LateralMenu() {
     const [activeScene, setActiveScene] = useState(1)
     const [history, setHistory] = useState([scenes])
     const [showYTURL, setShowYTURL] = useState(false)
-    const [ytUrl, setYTURL] = useState('')
-    const [isResize, setIsResize] = useState(false)
+    const [showMixer, setShowMixer] = useState(false)
 
     // Ref
     const modalRef = useRef(null)
     const sceneRef = useRef(null)
-    const dragedRef = useRef(null)
 
     const current = history[history.length - 1]
 
@@ -223,91 +221,15 @@ function LateralMenu() {
         setShowYTURL(!showYTURL)
     }
 
-    const handleCloseYTDrag = () => {
-        setShowYTURL(false)
-        setYTURL('')
-    }
-
-    const handleSubmitYTURL = (e) => {
-        e.preventDefault()
-        let str = e.target.url.value
-        if (regexYTLink.test(str)) {
-            setYTURL('https://www.youtube.com/embed/' + str.match(regexYTLink)[1])
-        }
-    }
-
-    const handleResize = (e, { node, size, handle }) => {
-        setIsResize(true)
+    const handleShowMixer = () => {
+        setShowMixer(!showMixer)
     }
 
     return (
         <>
-            {showYTURL && (
-                <Draggable
-                    ref={dragedRef}
-                    disabled={isResize}
-                    defaultClassName={cx('youtube-url-drag')}
-                    bounds="body"
-                    defaultPosition={{ x: 500, y: -600 }}
-                >
-                    <div>
-                        {!ytUrl ? (
-                            <form onSubmit={handleSubmitYTURL} className={cx('youtube-url-input-wrapper')}>
-                                <input
-                                    name="url"
-                                    className={cx('youtube-url-input')}
-                                    type="text"
-                                    placeholder="Enter Youtube video URL here: "
-                                    spellCheck="false"
-                                ></input>
-                                <button type="submit"></button>
-                                <button onClick={handleCloseYTDrag} className={cx('close-url-input-btn')}>
-                                    <img src="https://app.lofi.co/icons/close-popup.svg" alt="close-btn" />
-                                </button>
-                            </form>
-                        ) : (
-                            <ResizableBox
-                                className={cx('custom-box', 'box', 'yt-embedded-wrapper')}
-                                width={400}
-                                height={300}
-                                handle={
-                                    <button
-                                        onMouseDownCapture={() => {
-                                            setIsResize(true)
-                                        }}
-                                        className={cx('custom-handle', 'custom-handle-se')}
-                                    >
-                                        <img
-                                            src="https://app.lofi.co/icons/new/corner-draghandle.svg"
-                                            alt="resize-btn"
-                                        ></img>
-                                    </button>
-                                }
-                                handleSize={[8, 8]}
-                                onResizeStop={() => setIsResize(false)}
-                            >
-                                <nav className={cx('yt-embedded-nav')}>
-                                    <button onClick={() => setYTURL('')} className={cx('search-btn')}>
-                                        <img src="https://app.lofi.co/icons/new/search.svg" alt="search-btn" />
-                                    </button>
-                                    <button onClick={handleCloseYTDrag} className={cx('close-btn')}>
-                                        <img src="https://app.lofi.co/icons/close-popup.svg" alt="close-btn" />
-                                    </button>
-                                </nav>
-                                <iframe
-                                    width="100%"
-                                    height="100%"
-                                    src={ytUrl}
-                                    title="YouTube video player"
-                                    frameBorder="0"
-                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                    allowFullScreen
-                                ></iframe>
-                            </ResizableBox>
-                        )}
-                    </div>
-                </Draggable>
-            )}
+            {showYTURL && <YTEmbed onClose={handleShowYTURL}></YTEmbed>}
+
+            {showMixer && <Mixer onClose={handleShowMixer}></Mixer>}
 
             <div className={cx('wrapper')}>
                 {showScenes && (
@@ -324,7 +246,7 @@ function LateralMenu() {
                     </Modal>
                 )}
                 <div className={cx('icon-wrapper')}>
-                    <Button toolBtn titleTippy="Mixer" placement="left" arrow={false}>
+                    <Button onClick={handleShowMixer} toolBtn titleTippy="Mixer" placement="left" arrow={false}>
                         <MixerToolIcon></MixerToolIcon>
                     </Button>
                     <Button toolBtn titleTippy="Templates" placement="left" arrow={false}>

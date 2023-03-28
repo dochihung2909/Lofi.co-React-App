@@ -12,6 +12,8 @@
     --P-background-color: rgb(18 18 18 / 75%);
     --primary-color: #f3a952;
     --P-border-color: rgba(255, 255, 255, 0.3);
+    --P-text-color: rgb(255 255 255 / 70%);
+    --sub-background-color: rgb(255 255 255 / 5%);
 }
 
 html {
@@ -38,4 +40,14 @@ button {
     border: none;
     cursor: pointer;
     background-color: transparent;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 500;
+    margin-top: 0;
 }

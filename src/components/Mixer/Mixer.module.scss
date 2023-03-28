@@ -1,0 +1,35 @@
+.mixer-drag {
+    position: absolute;
+    cursor: move;
+
+    .wrapper {
+        display: flex;
+        flex-direction: column;
+        width: 311px;
+        height: 381px;
+        background-color: var(--P-background-color);
+        backdrop-filter: 30px;
+        border-radius: 16px;
+        overflow: hidden;
+        padding: 0 14px 14px;
+    }
+
+    // Header
+    .header {
+        display: flex;
+
+        .close-btn {
+            margin-left: auto;
+            padding: 4px 4px 8px 8px;
+        }
+    }
+
+    .content {
+        display: flex;
+    }
+}
+
+// Music
+.music-btn-wrapper {
+    display: flex;
+}

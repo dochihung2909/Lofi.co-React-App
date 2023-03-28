@@ -6,9 +6,9 @@ import { SceneIcon, VariationIcon } from '~/components/Icons'
 
 const cx = classNames.bind(styles)
 
-function Scene({ onClick, sceneThumb, scenes, variations, active }) {
+function Scene({ classNames, onClick, sceneThumb, scenes, variations, active }) {
     return (
-        <div onClick={onClick} className={cx('wrapper')}>
+        <div onClick={onClick} className={cx('wrapper', { [classNames]: classNames })}>
             <img className={cx({ active: active })} src={sceneThumb} alt="scene thumb" />
             {scenes && variations && (
                 <Tippy
