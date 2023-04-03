@@ -3,9 +3,14 @@ import styles from './GroupBox.module.scss'
 
 const cx = classNames.bind(styles)
 
-function GroupBox({ title, icon, onClick, children, height = 'auto', width = 'auto' }) {
+function GroupBox({ className, title, icon, onClick, children, height = 'auto', width = 'auto' }) {
     return (
-        <div style={{ height, width }} className={cx('wrapper')}>
+        <div
+            style={{ height, width }}
+            className={cx('wrapper', {
+                [className]: className,
+            })}
+        >
             <div className={cx('header')}>
                 {title && <h4 className={cx('title')}>{title}</h4>}
                 {icon && (
