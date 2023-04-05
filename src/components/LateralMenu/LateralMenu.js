@@ -182,6 +182,23 @@ function LateralMenu() {
         }
     }, [showScenes])
 
+    // Create HOC to reuse close modal when click outside
+    // const hideWhenClickOutside = (ref) => {
+    //     const handleClickOutside = (event) => {
+    //         if (modalRef.current && !modalRef.current.contains(event.target)) {
+    //             if (!sceneRef.current.contains(event.target)) {
+    //                 setShowScenes(false)
+    //             }
+    //         }
+    //     }
+
+    //     document.addEventListener('mousedown', handleClickOutside)
+
+    //     return () => {
+    //         document.removeEventListener('mousedown', handleClickOutside)
+    //     }
+    // }
+
     useEffect(() => {
         const handleClickOutside = (event) => {
             if (modalRef.current && !modalRef.current.contains(event.target)) {
@@ -227,9 +244,9 @@ function LateralMenu() {
 
     return (
         <>
-            {showYTURL && <YTEmbed onClose={handleShowYTURL}></YTEmbed>}
+            <YTEmbed className={cx({ activeYTURL: showYTURL })} onClose={handleShowYTURL}></YTEmbed>
 
-            {showMixer && <Mixer onClose={handleShowMixer}></Mixer>}
+            <Mixer className={cx({ activeMixer: showMixer })} onClose={handleShowMixer}></Mixer>
 
             <div className={cx('wrapper')}>
                 {showScenes && (

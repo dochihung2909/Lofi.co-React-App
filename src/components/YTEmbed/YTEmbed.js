@@ -8,7 +8,7 @@ const cx = classNames.bind(styles)
 
 const regexYTLink = /http(?:s?):\/\/(?:www\.)?youtu(?:be\.com\/watch\?v=|\.be\/)([\w\-\_]*)(&(amp;)?‌​[\w\?‌​=]*)?/
 
-function YTEmbed({ onClose }) {
+function YTEmbed({ className, onClose }) {
     const [ytUrl, setYTURL] = useState('')
     const [isResize, setIsResize] = useState(false)
 
@@ -25,7 +25,7 @@ function YTEmbed({ onClose }) {
     return (
         <Draggable
             disabled={isResize}
-            defaultClassName={cx('youtube-url-drag')}
+            defaultClassName={cx('youtube-url-drag', { [className]: className })}
             bounds="body"
             defaultPosition={{ x: 500, y: -600 }}
         >

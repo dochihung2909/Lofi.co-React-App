@@ -1,6 +1,7 @@
 .mixer-drag {
     position: absolute;
     z-index: 1000;
+    display: none;
 
     .wrapper {
         display: flex;

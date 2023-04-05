@@ -124,10 +124,12 @@ const sounds = [
     },
 ]
 
-function Mixer({ onClose }) {
+function Mixer({ className, onClose }) {
     const [selected, setSeleted] = useState(3)
     const [publisher, setPublisher] = useState(false)
     const { handleHide, controls, handleChangeVolume } = useContext(ControlsContext)
+
+    const spotifyPlayList = ['1lVoSF8Bd6bQJaoEHFGegX', '4dJSLiR8n2ZQUccpyXYKvE', '0iepisLXvVe5RxB3owHjlj']
 
     // const [sounds, setSounds] = useState([])
 
@@ -155,14 +157,19 @@ function Mixer({ onClose }) {
     const handleChangePublisher = (value) => {
         if (value !== publisher) {
             handleHide(value)
-            setPublisher(value)
         }
+        setPublisher(value)
+    }
+
+    const handleClose = () => {
+        onClose()
+        console.log(controls.isHide, publisher)
     }
 
     return (
         <Draggable
             handle="strong"
-            defaultClassName={cx('mixer-drag')}
+            defaultClassName={cx('mixer-drag', { [className]: className })}
             bounds="body"
             defaultPosition={{ x: 500, y: -600 }}
         >
@@ -170,7 +177,7 @@ function Mixer({ onClose }) {
                 <div className={cx('wrapper')}>
                     <strong>
                         <div className={cx('header')}>
-                            <button onClick={onClose} className={cx('close-btn')}>
+                            <button onClick={handleClose} className={cx('close-btn')}>
                                 <img src="https://app.lofi.co/icons/new/mixer-close-icon.svg" alt="close mixer" />
                             </button>
                         </div>
@@ -238,7 +245,9 @@ function Mixer({ onClose }) {
                                     style={{
                                         borderRadius: '12px',
                                     }}
-                                    src="https://open.spotify.com/embed/playlist/4dJSLiR8n2ZQUccpyXYKvE?utm_source=generator"
+                                    src={`https://open.spotify.com/embed/playlist/${
+                                        spotifyPlayList[selected - 1]
+                                    }?utm_source=generator`}
                                     width="100%"
                                     height="152"
                                     frameBorder="0"
