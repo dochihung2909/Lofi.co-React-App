@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/Lofi.co-React-App/static/css/main.42784c33.css",
-    "main.js": "/Lofi.co-React-App/static/js/main.e264e265.js",
+    "main.css": "/Lofi.co-React-App/static/css/main.3c43b283.css",
+    "main.js": "/Lofi.co-React-App/static/js/main.db311e47.js",
     "static/js/787.a0658cbe.chunk.js": "/Lofi.co-React-App/static/js/787.a0658cbe.chunk.js",
     "static/media/Exterior+-+Rainy+Day.mp4": "/Lofi.co-React-App/static/media/Exterior+-+Rainy+Day.cd2045149ad6a93f9ddc.mp4",
     "static/media/slow-down-night.mp4": "/Lofi.co-React-App/static/media/slow-down-night.4b216a271aebf6dbe327.mp4",
@@ -28,12 +28,12 @@
     "index.html": "/Lofi.co-React-App/index.html",
     "static/media/fullscreen.svg": "/Lofi.co-React-App/static/media/fullscreen.d2ed3a8a17718b26158cf125e9950a01.svg",
     "static/media/menu.svg": "/Lofi.co-React-App/static/media/menu.6668f7df20559b5a20acf28e4a9eac60.svg",
-    "main.42784c33.css.map": "/Lofi.co-React-App/static/css/main.42784c33.css.map",
-    "main.e264e265.js.map": "/Lofi.co-React-App/static/js/main.e264e265.js.map",
+    "main.3c43b283.css.map": "/Lofi.co-React-App/static/css/main.3c43b283.css.map",
+    "main.db311e47.js.map": "/Lofi.co-React-App/static/js/main.db311e47.js.map",
     "787.a0658cbe.chunk.js.map": "/Lofi.co-React-App/static/js/787.a0658cbe.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.42784c33.css",
-    "static/js/main.e264e265.js"
+    "static/css/main.3c43b283.css",
+    "static/js/main.db311e47.js"
   ]
 }
