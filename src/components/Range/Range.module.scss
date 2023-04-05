@@ -54,5 +54,26 @@
         border-radius: 1000px;
         z-index: 10;
         background: var(--primary-color);
+        cursor: pointer;
+    }
+}
+
+.noAbsolute {
+    position: relative;
+}
+
+.soundRange {
+    .range-track,
+    .input-range {
+        height: 24px;
+    }
+
+    .input-range {
+        &::-webkit-slider-thumb {
+            height: 24px;
+            width: 24px;
+            box-shadow: 0 0px 6px rgba(0, 0, 0, 0.25);
+            background-image: url('https://app.lofi.co/static/media/city-active.d70df9fa9773589925d473060688536b.svg');
+        }
     }
 }

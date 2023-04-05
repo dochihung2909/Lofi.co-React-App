@@ -12,10 +12,13 @@ const cx = classNames.bind(styles)
 const Button = forwardRef(
     (
         {
+            width = '33px',
+            height = '33px',
             titleTippy,
             toolBtn,
             placement,
             arrow,
+            interactive,
             offset,
             children,
             className,
@@ -54,11 +57,20 @@ const Button = forwardRef(
             placement,
             arrow,
             offset,
+            interactive,
         }
 
         return (
             <Wrapper style={{ display: 'flex' }} {...tippyProps}>
-                <Comp ref={ref} className={classes} {...props}>
+                <Comp
+                    style={{
+                        width: width,
+                        height: height,
+                    }}
+                    ref={ref}
+                    className={classes}
+                    {...props}
+                >
                     <span className={cx('icon')}>{icon}</span>
                     {children}
                 </Comp>

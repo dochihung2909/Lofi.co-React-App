@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from 'react'
 import Header from '~/layouts/Header'
 import Content from '~/layouts/Content'
 import styles from './DefaultLayout.module.scss'
-import { ThemeContext, PlayVideoContext, AudioContext } from '~/context'
+import { ThemeContext, AudioContext, ControlsContext } from '~/context'
 import LateralMenu from '~/components/LateralMenu'
 import Bottom from '../Bottom'
 import videos from '~/assets/videos'
@@ -14,7 +14,6 @@ const cx = classNames.bind(styles)
 
 function DefaultLayout() {
     const [theme, setTheme] = useState(false)
-    const [isPlayed, setIsPlayed] = useState(false)
     const [audioPlaying, setAudioPlaying] = useState(playList[0])
     const [prevAudioPlaying, setPrevAudioPlaying] = useState()
     const [bgTheme, setBgTheme] = useState({
@@ -22,6 +21,16 @@ function DefaultLayout() {
         night: videos.seoul.inside.night,
         dayRainy: '',
         nightRainy: '',
+    })
+
+    const [controls, setControls] = useState({
+        isHide: false,
+        isPlayed: false,
+        volume: {
+            current: 0.5,
+            bfMuted: 0.5,
+        },
+        isMuted: false,
     })
 
     return (
@@ -40,11 +49,58 @@ function DefaultLayout() {
                 },
             }}
         >
-            <PlayVideoContext.Provider
+            <ControlsContext.Provider
                 value={{
-                    isPlayed,
+                    controls,
                     togglePlay() {
-                        setIsPlayed((prev) => !prev)
+                        setControls((prev) => ({
+                            ...prev,
+                            isPlayed: !prev.isPlayed,
+                        }))
+                    },
+                    setPlay(value) {
+                        setControls((prev) => ({
+                            ...prev,
+                            isPlayed: value,
+                        }))
+                    },
+                    handleChangeVolume(value) {
+                        value = value / 100
+                        setControls((prev) => ({
+                            ...prev,
+                            volume: {
+                                ...prev.volume,
+                                current: value,
+                            },
+                        }))
+                    },
+                    handleMuted() {
+                        const isMuted = !controls.isMuted
+                        if (isMuted) {
+                            setControls((prev) => ({
+                                ...prev,
+                                volume: {
+                                    bfMuted: prev.volume.current,
+                                    current: 0,
+                                },
+                                isMuted: true,
+                            }))
+                        } else {
+                            setControls((prev) => ({
+                                ...prev,
+                                volume: {
+                                    ...prev.volume,
+                                    current: prev.volume.bfMuted,
+                                },
+                                isMuted: false,
+                            }))
+                        }
+                    },
+                    handleHide(hide) {
+                        setControls((prev) => ({
+                            ...prev,
+                            isHide: hide,
+                        }))
                     },
                 }}
             >
@@ -71,7 +127,7 @@ function DefaultLayout() {
                     </div>
                     <Bottom artist={audioPlaying.artist}></Bottom>
                 </AudioContext.Provider>
-            </PlayVideoContext.Provider>
+            </ControlsContext.Provider>
         </ThemeContext.Provider>
     )
 }

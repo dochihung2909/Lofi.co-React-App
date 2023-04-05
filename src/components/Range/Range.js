@@ -3,10 +3,12 @@ import styles from './Range.module.scss'
 
 const cx = classNames.bind(styles)
 
-function Range({ show, onChange, value, className, ...propsObj }) {
+function Range({ icon, soundRange, noAbsolute, show, onChange, value, className, ...propsObj }) {
     const classes = cx('wrapper', {
         [className]: className,
         show,
+        noAbsolute,
+        soundRange,
     })
 
     return (

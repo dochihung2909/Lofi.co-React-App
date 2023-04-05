@@ -246,13 +246,30 @@ function LateralMenu() {
                     </Modal>
                 )}
                 <div className={cx('icon-wrapper')}>
-                    <Button onClick={handleShowMixer} toolBtn titleTippy="Mixer" placement="left" arrow={false}>
+                    <Button
+                        width={'42px'}
+                        height={'54px'}
+                        onClick={handleShowMixer}
+                        toolBtn
+                        titleTippy="Mixer"
+                        placement="left"
+                        arrow={false}
+                    >
                         <MixerToolIcon></MixerToolIcon>
                     </Button>
-                    <Button toolBtn titleTippy="Templates" placement="left" arrow={false}>
+                    <Button
+                        width={'42px'}
+                        height={'54px'}
+                        toolBtn
+                        titleTippy="Templates"
+                        placement="left"
+                        arrow={false}
+                    >
                         <TemplateToolIcon></TemplateToolIcon>
                     </Button>
                     <Button
+                        width={'42px'}
+                        height={'54px'}
                         ref={sceneRef}
                         toolBtn
                         titleTippy="Scenes"
@@ -262,7 +279,15 @@ function LateralMenu() {
                     >
                         <ScencesToolIcon></ScencesToolIcon>
                     </Button>
-                    <Button toolBtn onClick={handleShowToolBar} titleTippy="Tools" placement="left" arrow={false}>
+                    <Button
+                        width={'42px'}
+                        height={'54px'}
+                        toolBtn
+                        onClick={handleShowToolBar}
+                        titleTippy="Tools"
+                        placement="left"
+                        arrow={false}
+                    >
                         <WidgetsToolIcon className={cx('tools-icon')}></WidgetsToolIcon>
                     </Button>
                     <Tools onShowYtURL={handleShowYTURL} show={showTools}></Tools>

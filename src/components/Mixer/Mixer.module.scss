@@ -10,8 +10,13 @@
         background-color: var(--P-background-color);
         backdrop-filter: blur(3rem);
         border-radius: 16px;
-        overflow: hidden;
         padding: 0 14px 14px;
+        overflow: hidden;
+        overflow-y: overlay;
+
+        &::-webkit-scrollbar {
+            width: 0;
+        }
     }
 
     // Header
@@ -22,11 +27,14 @@
         .close-btn {
             margin-left: auto;
             padding: 4px 4px 8px 8px;
+            margin-bottom: 4px;
         }
     }
 
     .content {
         display: flex;
+        gap: 14px;
+        flex-direction: column;
     }
 }
 
@@ -47,6 +55,14 @@
     width: fit-content;
     display: flex;
     flex-direction: column;
+
+    &:last-child svg {
+        padding-right: 2px;
+    }
+
+    &:nth-child(2) svg {
+        padding-bottom: 2px;
+    }
 
     .btn-icon-wrapper {
         position: relative;
@@ -75,7 +91,8 @@
             position: absolute;
             width: 52px;
             height: 52px;
-            transform: scale(1.5) translate(-30%, -36%) !important;
+            transform: scale(1.5) translate(-31%, -36%) !important;
+            display: flex;
             top: 50%;
             left: 50%;
             filter: brightness(100) opacity(0.2);
@@ -98,6 +115,14 @@
     flex-direction: column;
     gap: 14px;
     width: 100%;
+
+    .active {
+        border: 1px solid var(--primary-color);
+
+        .publisher-avt {
+            opacity: 1;
+        }
+    }
 }
 
 .publisher-wrapper {
@@ -109,20 +134,68 @@
     justify-content: left;
     border: 1px solid transparent;
     cursor: pointer;
+    padding: 13px 10px;
 
     .publisher-avt {
         width: 2.2rem;
         height: 2.2rem;
         display: flex;
         margin-right: 6px;
+        opacity: 0.5;
     }
 
     .publisher-name {
         font-size: 1.4rem;
         color: var(--white);
+        font-weight: 400;
     }
 }
 
-.actived {
-    border: 1px solid var(--primary-color);
+// volume controls
+.volume-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .volume-controls {
+        background-color: transparent;
+    }
+
+    & span {
+        display: flex;
+        width: 30px;
+        justify-content: center;
+    }
+
+    & img {
+        display: flex;
+    }
+}
+
+// Sounds
+.sounds {
+    overflow: hidden;
+    overflow-y: overlay;
+
+    &::-webkit-scrollbar {
+        width: 0;
+    }
+}
+
+.sound-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+    .sound-title {
+        color: var(--P-border-color);
+        font-size: 1.4rem;
+        font-weight: 400;
+        width: 130px;
+    }
+
+    .sound-range-controls {
+        background-color: transparent;
+        padding: 0;
+    }
 }
